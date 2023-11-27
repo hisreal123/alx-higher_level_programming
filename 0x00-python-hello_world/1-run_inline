@@ -1,14 +1,2 @@
 #!/bin/bash
-
-if [ -z "$PYCODE" ]; then
-    echo "Enviromental Vairiable : \$PYCODE is not set"
-    exit 1
-
-fi
-
-temp_file=$(mktemp) #saves the file into a temporary code
-echo "$PYCODE" > "$temp_file" # takes the env variable and append it into the temp_file
-python3 "$temp_file" # now python can run the temp_file as a file
-
-rm "$temp_file" # clean up, deletes the created file.
-
+echo "$PYCODE" > ./tmp.py && python3 ./tmp.py && rm ./tmp.py
