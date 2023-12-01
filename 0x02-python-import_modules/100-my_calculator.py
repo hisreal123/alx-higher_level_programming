@@ -20,5 +20,4 @@ if __name__ == "__main__":
 
     op = sys.argv[2]
     result = dice[op](first_number, second_number)
-
-    print("{} {} {} = {}".format(first_number, op, second_number, dice[op](first_number, second_number)))
+    print("{} {} {} = {}".format(first_number, op, second_number, result))
