@@ -18,9 +18,6 @@ if __name__ == "__main__":
         print("Unknown operator. Available operators: +, -, * and /")
         exit(1)
 
-    # print("{} {} {}".format(first_number, second_number, dice(sys.argv[3](first_number, second_number))))
-
-    # chat
     op = sys.argv[2]
     result = dice[op](first_number, second_number)
 
