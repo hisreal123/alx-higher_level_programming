@@ -20,5 +20,5 @@ if __name__ == "__main__":
         subprocess.run(['git', 'add', '.'])
         subprocess.run(['git', 'commit', '-m', commit_message])
         subprocess.run(
-            ['git', 'push', '-u', f'https://{username}:{user_token}{repo}'])
+            ['git', 'push', '-u', f'https://github.com/{username}:{user_token}{repo}'])
         print('Git push successful!')
