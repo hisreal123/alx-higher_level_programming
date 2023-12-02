@@ -17,9 +17,8 @@ if __name__ == "__main__":
     if not commit_message:
         print('You have no entered commit message nigga !!')
     else:
+        subprocess.run(['git', 'add', '.'])
         subprocess.run(['git', 'commit', '-m', commit_message])
-        print("successfully committed !!: '{}'".format(commit_message))
-
-        # git push
-        subprocess.run(['git', 'push', '-u', f'{repo}'])
+        subprocess.run(
+            ['git', 'push', '-u', f'https://{username}:{user_token}{repo}'])
         print('Git push successful!')
