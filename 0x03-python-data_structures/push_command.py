@@ -6,7 +6,7 @@ if __name__ == "__main__":
 
     username = 'hisreal123'
     user_token = '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'
-    repo = f'https://github.com/hisreal123:{user_token}/alx-higher_level_programming.git'
+    repo = f'https://{username}:{user_token}@github.com/hisreal123/alx-higher_level_programming.git'
 
     # git add .
     subprocess.run(['git', 'add', '.'])
@@ -20,5 +20,5 @@ if __name__ == "__main__":
         subprocess.run(['git', 'commit', '-m', commit_message])
         print("successfully committed !!: '{}'".format(commit_message))
 
-        subprocess.run(['git', 'push', '-u', f'{repo}'])
+        subprocess.run(['git', 'push', '-u', 'origin', 'main'])
         print('Git push successful!')
