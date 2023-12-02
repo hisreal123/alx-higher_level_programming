@@ -17,6 +17,8 @@ if __name__ == "__main__":
         print("successfully committed !!: '{}'".format(commit_message))
 
     username = 'hisreal123'
-    userToken = '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'
+    user_token = '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'
+    repo = 'https://github.com/hisreal123/alx-higher_level_programming.git'
 
-    subprocess.run(['git', 'push'])
+    subprocess.run(['git', 'push', '-u', f'{repo}'])
+    print('Git push successful!')
