@@ -3,11 +3,11 @@ import subprocess
 
 if __name__ == "__main__":
     # SSH-formatted repository URL
-
-    remote_output = subprocess.run(['git', 'remote', '-v', '\n'], capture_output=True, text=True)
-    print(remote_output)
-
-    repo = 'git@github.com:hisreal123/alx-higher_level_programming.git'
+    repo = ''
+    remote_output = subprocess.run(['git', 'remote', '-v',], capture_output=True, text=True)
+    if "origin" in remote_output.stdout:
+        repo = remote_output.stdout.split("origin")[1].split()[0]
+    print(repo)
 
     subprocess.run(['git', 'add', '.'])
     print("All new files successfully added")
@@ -22,4 +22,4 @@ if __name__ == "__main__":
 
         # git push with the personal access token
         subprocess.run(['git', 'push', 'origin', 'main'])
-        print('Git push successful!')
+        print('Git push successful! to {} '.format(repo))
