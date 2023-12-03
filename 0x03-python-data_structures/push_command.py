@@ -11,6 +11,8 @@ if __name__ == "__main__":
     subprocess.run(['git', 'add', '.'])
     print("All new files successfully added")
 
+
+
     # git commit
     commit_message = input('Enter commit message: ')
     if not commit_message:
