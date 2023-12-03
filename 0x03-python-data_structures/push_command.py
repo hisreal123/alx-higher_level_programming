@@ -11,8 +11,6 @@ if __name__ == "__main__":
     subprocess.run(['git', 'add', '.'])
     print("All new files successfully added")
 
-
-
     # git commit
     commit_message = input('Enter commit message: ')
     if not commit_message:
@@ -21,6 +19,9 @@ if __name__ == "__main__":
         subprocess.run(['git', 'commit', '-m', commit_message])
         print("Successfully committed: '{}'".format(commit_message))
 
-        # git push with the saved token
+        # Set the Git credential helper to use the access token
+        subprocess.run(['git', 'config', '--global', 'credential.helper', 'store'])
+
+        # git push with the personal access token
         subprocess.run(['git', 'push', 'origin', 'main'])
         print('Git push successful!')
