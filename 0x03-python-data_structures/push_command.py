@@ -8,8 +8,8 @@ if __name__ == "__main__":
     repo = 'git@github.com:hisreal123/alx-higher_level_programming.git'
 
     # git add .
-    subprocess.run(['git', 'add', '.'])
-    print("All new files successfully added")
+    if subprocess.run(['git', 'add', '.']):
+        print("All new files successfully added")
 
     # git commit
     commit_message = input('Enter commit message: ')
