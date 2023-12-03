@@ -3,6 +3,10 @@ import subprocess
 
 if __name__ == "__main__":
     # SSH-formatted repository URL
+
+    remote_output = subprocess.run(['git', 'remote', '-v', '\n'], capture_output=True, text=True)
+    print(remote_output)
+
     repo = 'git@github.com:hisreal123/alx-higher_level_programming.git'
 
     subprocess.run(['git', 'add', '.'])
