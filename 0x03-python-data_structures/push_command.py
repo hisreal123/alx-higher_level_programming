@@ -5,10 +5,13 @@ if __name__ == "__main__":
     import subprocess
     import os
 
-
     username = 'hisreal123'
     user_token = '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'
     repo = 'git@github.com:hisreal123/alx-higher_level_programming.git'
+
+    # Start SSH agent and add key
+    subprocess.run(['eval', '$(ssh-agent -s)'], shell=True)
+    subprocess.run(['ssh-add', '/home/treasure/.ssh/id_ed25519'])
 
     # git add .
     subprocess.run(['git', 'add', '.'])
