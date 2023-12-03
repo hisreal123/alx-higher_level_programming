@@ -3,6 +3,8 @@ import sys
 
 if __name__ == "__main__":
     import subprocess
+    import os
+
 
     username = 'hisreal123'
     user_token = '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'
@@ -20,5 +22,7 @@ if __name__ == "__main__":
         subprocess.run(['git', 'commit', '-m', commit_message])
         print("successfully committed !!: '{}'".format(commit_message))
 
-        subprocess.run(['git', 'push', 'origin', 'main'], env={"GIT_SSH_COMMAND": "ssh -o 'StrictHostKeyChecking=no'"})
+        env = os.environ.copy()
+        env["GIT_SSH_COMMAND"] = "ssh -o 'StrictHostKeyChecking=no'"
+        subprocess.run(['git', 'push', 'origin', 'main'], env=env)
         print('Git push successful!')
