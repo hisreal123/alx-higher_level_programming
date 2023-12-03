@@ -7,20 +7,7 @@ if __name__ == "__main__":
     user_token = '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'
     repo = 'git@github.com:hisreal123/alx-higher_level_programming.git'
 
-    # Start SSH agent and add key
-    ssh_agent_process = subprocess.Popen(['eval', '$(ssh-agent -s)'], stdout=subprocess.PIPE, shell=True)
-    ssh_agent_output = ssh_agent_process.communicate()[0]
-
-    # Extract the SSH_AUTH_SOCK and SSH_AGENT_PID values
-    for line in ssh_agent_output.splitlines():
-        if b'SSH_AUTH_SOCK' in line:
-            env_key, env_value = line.split(b'=')
-            os.environ[env_key.decode()] = env_value.decode()
-        if b'SSH_AGENT_PID' in line:
-            env_key, env_value = line.split(b'=')
-            os.environ[env_key.decode()] = env_value.decode()
-
-    # Add the SSH key to the agent
+    # Make sure SSH agent is running and add the key
     subprocess.run(['ssh-add', '/home/treasure/.ssh/id_ed25519'])
 
     # git add .
