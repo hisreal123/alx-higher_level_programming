@@ -3,6 +3,6 @@
 def no_c(my_string):
     new_str = " "
     for char in my_string:
-        if char != "c" and char != "C":
+        if char.lower() != "c":
             new_str += char
     return new_str
