@@ -10,4 +10,3 @@ def multiple_returns(sentence):
         snLen = len(sentence)
 
         return snLen, fIndex
-
