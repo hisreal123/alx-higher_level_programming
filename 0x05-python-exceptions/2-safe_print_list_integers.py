@@ -17,4 +17,3 @@ def safe_print_list_integers(my_list=None, x=0):
     finally:
         print()
         return count
-
