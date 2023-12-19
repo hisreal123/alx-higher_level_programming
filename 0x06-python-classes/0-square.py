@@ -1,5 +1,7 @@
 #!/usr/bin/python3
+"""Square class definition"""
+
 
 class Square:
-    def __init__(self, side_light):
-        self.side_length = side_light
+    """Square class body"""
+    pass
