@@ -1,6 +1,7 @@
 #!/usr/bin/python3
-""" A class called LockedClass"""
+""" LockedClass class Module"""
 
 
 class LockedClass():
+    """variables declarations """
     __slots__ = 'first_name'
