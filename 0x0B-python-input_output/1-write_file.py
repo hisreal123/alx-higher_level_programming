@@ -4,8 +4,7 @@
 
 def read_file(filename="", test=""):
     """
-    write_file function
-    write a text file from an (UTF8)
+    Write a string to a UTF8 text file.
     """
-    with open(filename, mode='w', encoding='utf-8') as f:
+    with open(filename, 'w', encoding='utf-8') as f:
         return f.write(test)
