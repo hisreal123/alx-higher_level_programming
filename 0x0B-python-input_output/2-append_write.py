@@ -12,5 +12,6 @@ def append_write(filename="", test=""):
 
     number_of_line += test
 
+    """read_file function reads a text file(UTF8) and prints it result to stdout """
     with open(filename, 'w', encoding='utf-8') as file:
         return file.write(number_of_line)
