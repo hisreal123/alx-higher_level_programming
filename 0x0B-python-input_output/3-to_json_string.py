@@ -1,8 +1,11 @@
 #!/usr/bin/python
-"""Defines an append_write file module """
+""" from_json_string module """
 import json
 
 
-def to_json_string(my_obj):
-    """returns the JSON representation of an object (string) """
-    json.loads(my_obj)
+def from_json_string(my_str):
+    """
+    Return a JSON object
+    """
+
+    return json.loads(my_str)
