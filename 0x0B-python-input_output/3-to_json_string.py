@@ -4,5 +4,5 @@ import json
 
 
 def to_json_string(my_obj):
-    """using the .loads method to parse thr python object to json format"""
+    """returns the JSON representation of an object (string) """
     json.loads(my_obj)
