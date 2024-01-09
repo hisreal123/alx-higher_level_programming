@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Defines read file module """
+"""Defines an append_write file module """
 
 
 def append_write(filename="", test=""):
