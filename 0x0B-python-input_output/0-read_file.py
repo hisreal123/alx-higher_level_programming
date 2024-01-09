@@ -1,10 +1,11 @@
-#!/usr/bin/python
-
-"""  function read_file reads a file and return's the value """
+#!/usr/bin/python3
+"""Defines read file module """
 
 
 def read_file(filename=""):
-    """ within the function body"""
+    """
+    read_file function
+    reads a text file (UTF8) and prints it result to stdout
+    """
     with open(filename, mode='r', encoding='utf-8') as f:
-        """ this opens the file, in encoding utf-8 which means it should be readable"""
         print(f.read(), end='')
