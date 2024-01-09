@@ -5,6 +5,6 @@
 
 def read_file(filename=""):
     """ within the function body"""
-    with open(filename, encoding="utf-8") as f:
+    with open(filename, mode='r', encoding='utf-8') as f:
         """ this opens the file, in encoding utf-8 which means it should be readable"""
-        return f.read()
+        print(f.read(), end='')
