@@ -2,7 +2,7 @@
 """Defines write file module """
 
 
-def read_file(filename="", test=""):
+def write_file(filename="", test=""):
     """
     Write a string to a UTF8 text file.
     """
