@@ -1,22 +1,36 @@
-Test Cases for add_interger
 
-Test Case 1:
-Input: 3, 5
-Expected Output: 8
+'0-add_interger' module
 
-Test Case 2:
-Input: -2, 10
-Expected Output: 8
+Uit test for the funtion 'add_interger' that returns the sum of integer
 
-Test Case 3:
-Input: 0, 0
-Expected Output: 0
+Import the function:
+    >>> add_interger  = __import__('0-add_interger').add_interger
 
-Test Case 4:
-Input: 10, 'xyz'
-Expected Output: TypeError('a must be a string')
+Now test it:
+    >>> add_interger(1,2)
+    3
 
+    >>> add_interger(1, 9.3)
+    10
 
-Test Case 5:
-Input: 'xyz', 10
-Expected Output: TypeError('a must be a string')
+    >>> add_interger(2)
+    100
+
+    >>> add_interger(-2, -1)
+    -3
+
+    >>> add_interger(10.0, 2.0)
+    12
+
+    >>> add_interger(4, "School")
+    Traceback (most recent call last):
+    TypeError: b must be an integer
+
+    >>> add_interger(None)
+    Traceback (most recent call last):
+    TypeError: a and b must be integer
+
+    >>> add_interger()
+    Traceback (most recent call last)
+    TypeError: add_interger() missing 1 required positional argument: 'a'
+    
