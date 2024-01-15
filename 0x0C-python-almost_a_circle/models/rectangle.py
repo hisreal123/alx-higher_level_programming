@@ -90,7 +90,3 @@ class Rectangle(Base):
         """Print the Rectangle instance using '#3 characters"""
         for _ in range(self.height):
             print('#' * self.width)
-
-
-rectangle_instance = Rectangle(width=5, height=3)
-rectangle_instance.display()
