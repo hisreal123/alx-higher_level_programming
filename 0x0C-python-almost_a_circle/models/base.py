@@ -62,7 +62,7 @@ class Base:
 
     @classmethod
     def load_from_file(cls):
-        """Return a list of classes instantiated from a file of JSON  string.
+        """Return a list of classes instantiated from a file of JSON  string function.
         """
         filename = str(cls.__name__) + ".json"
         try:
@@ -73,8 +73,8 @@ class Base:
             return []
 
     @classmethod
-    def save_to_file_csv(cls, list_objs):
-        """Write the CSV serialization of a list of objects to a file.
+    def save_to_file_csv_function(cls, list_objs):
+        """Write the CSV serialization of a list of objects to a file function.
         """
         filename = cls.__name__ + ".csv"
         with open(filename, "w", newline="") as csvfile:
@@ -90,8 +90,8 @@ class Base:
                     writer.writerow(obj.to_dictionary())
 
     @classmethod
-    def load_from_file_csv(cls):
-        """Return a list of class instantiated from a CSV file.
+    def load_from_file_csv_function(cls):
+        """Return a list of class instantiated from a CSV file function.
         """
         filename = cls.__name__ + ".csv"
         try:
@@ -108,8 +108,8 @@ class Base:
             return []
 
     @staticmethod
-    def draw(cls, list_rectangles, list_squares):
-        """Draw Rectangles and Squares using the turtle module.
+    def draw_function(cls, list_rectangles, list_squares):
+        """Draw Rectangles and Squares using the turtle module function.
         """
         window = turtle.Screen()
         pen = turtle.Pen()
@@ -129,3 +129,6 @@ class Base:
             pen.right(90)
 
         window.exitonclick()
+
+    def update(self, param):
+        pass
