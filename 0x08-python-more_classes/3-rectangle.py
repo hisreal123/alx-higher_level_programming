@@ -55,7 +55,3 @@ class Rectangle:
         for _ in range(self._height):
             rectangle_str += "#" * self._width + "\n"
         return rectangle_str.rstrip()
-
-    # def __repr__(self):
-    #     return "Rectangle({}, {})".format(self._width, self._height)
-
