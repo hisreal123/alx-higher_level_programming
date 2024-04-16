@@ -12,7 +12,7 @@ class Square(Rectangle):
 
     def __str__(self):
         """returns the string description of the class"""
-        return "[Rectangle] {}/{}".format(self.__size, self.__size)
+        return "[Square] {}/{}".format(self.__size, self.__size)
 
     def area(self):
         """" Returning the area of a square"""
