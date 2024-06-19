@@ -49,7 +49,7 @@ const gitPush = () => {
       return;
     }
     console.log(`Changes pushed successfully: ${stdout}`);
-  });
+  });   
 };
 
 // Define function to format files using semistandard
