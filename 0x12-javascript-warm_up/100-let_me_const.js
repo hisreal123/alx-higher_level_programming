@@ -1,4 +1,4 @@
 #!/usr/bin/node
 
-// define a global scope
-global.myVar = 33;
+// Modify the global variable myVar
+global.myVar = 333;
