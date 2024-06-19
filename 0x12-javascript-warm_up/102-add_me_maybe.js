@@ -2,7 +2,7 @@
 
 const addMeMaybe = (n, theFunction) => {
   n++;
-  theFunction();
+  theFunction(n++);
 };
 
 module.exports.addMeMaybe = addMeMaybe;
