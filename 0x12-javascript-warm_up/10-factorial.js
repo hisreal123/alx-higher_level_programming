@@ -1,6 +1,6 @@
 #!/usr/bin/node
 
-const n = Number(process.argv.slice(2));
+const num = Number(process.argv.slice(2));
 
 const factorial = (num) => {
   if (Number.isNaN(num) || num === 1) {
@@ -10,4 +10,4 @@ const factorial = (num) => {
   }
 };
 
-console.log(factorial(n));
+console.log(factorial(num));
