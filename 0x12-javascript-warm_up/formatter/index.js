@@ -1,55 +1,24 @@
 // Import necessary modules
 const { exec } = require("child_process");
+const gitCommit = (commitMessage) => {
+  exec(
+    `git add . && git commit -m "${commitMessage}" && git push origin main`,
+    (error, stdout, stderr) => {
+      if (error) {
+        console.error(`Error pushing latest changes: ${error.message}`);
+        return;
+      }
 
-// Function to add files
-const gitAdd = (commitMessage) => {
-  exec("git add .", (error, stdout, stderr) => {
-    if (error) {
-      console.error(`Error adding files: ${error.message}`);
-      return;
-    }
-    if (stderr) {
-      console.error(`Git add error: ${stderr}`);
-      return;
-    }
-    console.log(`Files added successfully: ${stdout}`);
+      if (stderr) {
+        console.error(`Exec stderr: ${stderr}`);
+        return;
+      }
 
-    // After adding, commit the changes
-    gitCommit(commitMessage);
-  });
-};
-
-// Function to commit changes
-const gitCommit = async (commitMessage) => {
-  await exec(`git commit -m '${commitMessage}'`, (error, stdout, stderr) => {
-    if (error) {
-      console.error(`Error committing changes: ${error.message}`);
-      return;
+      console.log(`
+      ================ Successfully Committed ✅ ==============================
+      ${stdout}`);
     }
-    if (stderr) {
-      console.error(`Git commit error: ${stderr}`);
-      return;
-    }
-    console.log(`Changes committed successfully: ${stdout}`);
-
-    // After committing, push changes
-    gitPush();
-  });
-};
-
-// Function to push
-const gitPush = () => {
-  exec("git push origin main", (error, stdout, stderr) => {
-    if (error) {
-      console.error(`Error pushing changes: ${error.message}`);
-      return;
-    }
-    if (stderr) {
-      console.error(`Git push error: ${stderr}`);
-      return;
-    }
-    console.log(`Changes pushed successfully: ${stdout}`);
-  });   
+  );
 };
 
 // Define function to format files using semistandard
@@ -75,7 +44,7 @@ const format = (file, commitMessage) => {
       ${stdout}`);
 
     // After formatting, commit the changes
-    gitAdd(commitMessage);
+    gitCommit(commitMessage);
   });
 };
 
