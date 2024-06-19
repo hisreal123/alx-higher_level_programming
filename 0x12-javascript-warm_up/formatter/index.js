@@ -20,8 +20,8 @@ const gitAdd = (commitMessage) => {
 };
 
 // Function to commit changes
-const gitCommit = (commitMessage) => {
-  exec(`git commit -m '${commitMessage}'`, (error, stdout, stderr) => {
+const gitCommit = async (commitMessage) => {
+  await exec(`git commit -m '${commitMessage}'`, (error, stdout, stderr) => {
     if (error) {
       console.error(`Error committing changes: ${error.message}`);
       return;
