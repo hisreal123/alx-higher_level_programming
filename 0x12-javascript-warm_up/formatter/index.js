@@ -17,7 +17,7 @@ const gitCommit = (commitMessage) => {
 
       console.log(`
       ================ Successfully Committed ✅  ==============================: 
-      ================ Successfully Committed ✅  ==============================: 
+      ================ Successfully Committed ✅  ==============================: ,
       ${stdout}`);
     }
   );
@@ -36,8 +36,10 @@ const format = (arg1, arg2) => {
       return;
     }
 
-    console.log(`Stdout: ${stdout} commiting code now  ⏳`);
-    
+    console.log(
+      `================ Successfully fix file ✅  ==============================: ${stdout} commiting code now  ⏳`
+    );
+
     gitCommit(arg2);
   });
 };
