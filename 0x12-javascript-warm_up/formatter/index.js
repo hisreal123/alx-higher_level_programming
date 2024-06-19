@@ -39,7 +39,7 @@ const gitCommit = async (commitMessage) => {
 
 // Function to push
 const gitPush = () => {
-  exec("git push", (error, stdout, stderr) => {
+  exec("git push origin main", (error, stdout, stderr) => {
     if (error) {
       console.error(`Error pushing changes: ${error.message}`);
       return;
