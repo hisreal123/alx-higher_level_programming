@@ -37,7 +37,7 @@ const gitCommit = async (commitMessage) => {
   });
 };
 
-// Function to push changes
+// Function to push
 const gitPush = () => {
   exec("git push", (error, stdout, stderr) => {
     if (error) {
