@@ -1,26 +1,55 @@
 // Import necessary modules
 const { exec } = require("child_process");
 
-// Define function to commit changes to Git
-const gitCommit = (commitMessage) => {
-  exec(
-    `git add . && git commit -m '${commitMessage}' && git push`,
-    (error, stdout, stderr) => {
-      if (error) {
-        console.error(`Error pushing latest changes: ${error.message}`);
-        return;
-      }
-
-      if (stderr) {
-        console.error(`Git push error: ${stderr}`);
-        return;
-      }
-
-      console.log(`
-      ================ Successfully Committed and Pushed ✅ ==============================
-      ${stdout}`);
+// Function to add files
+const gitAdd = (commitMessage) => {
+  exec("git add .", (error, stdout, stderr) => {
+    if (error) {
+      console.error(`Error adding files: ${error.message}`);
+      return;
     }
-  );
+    if (stderr) {
+      console.error(`Git add error: ${stderr}`);
+      return;
+    }
+    console.log(`Files added successfully: ${stdout}`);
+
+    // After adding, commit the changes
+    gitCommit(commitMessage);
+  });
+};
+
+// Function to commit changes
+const gitCommit = (commitMessage) => {
+  exec(`git commit -m '${commitMessage}'`, (error, stdout, stderr) => {
+    if (error) {
+      console.error(`Error committing changes: ${error.message}`);
+      return;
+    }
+    if (stderr) {
+      console.error(`Git commit error: ${stderr}`);
+      return;
+    }
+    console.log(`Changes committed successfully: ${stdout}`);
+
+    // After committing, push changes
+    gitPush();
+  });
+};
+
+// Function to push changes
+const gitPush = () => {
+  exec("git push", (error, stdout, stderr) => {
+    if (error) {
+      console.error(`Error pushing changes: ${error.message}`);
+      return;
+    }
+    if (stderr) {
+      console.error(`Git push error: ${stderr}`);
+      return;
+    }
+    console.log(`Changes pushed successfully: ${stdout}`);
+  });
 };
 
 // Define function to format files using semistandard
@@ -46,7 +75,7 @@ const format = (file, commitMessage) => {
       ${stdout}`);
 
     // After formatting, commit the changes
-    gitCommit(commitMessage);
+    gitAdd(commitMessage);
   });
 };
 
