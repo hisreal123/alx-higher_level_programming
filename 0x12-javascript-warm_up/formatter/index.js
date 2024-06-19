@@ -7,7 +7,7 @@ const gitCommit = (commitMessage) => {
     `git add . && git commit -m '${commitMessage}' && git push`,
     (error, stdout, stderr) => {
       if (error) {
-        console.error(`Error pushing latest changes: ${error.message}`);
+        console.error(`Error pushing latest changes: ${error.message}`); 
         return;
       }
 
