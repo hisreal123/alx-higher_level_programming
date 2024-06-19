@@ -1,6 +1,6 @@
 // Import necessary modules
 const { exec } = require("child_process");
-const gitCommit = (commitMessage) => {
+const gitCommit = async (commitMessage) => {
   exec(
     `git add . && git commit -m "${commitMessage}" && git push origin main`,
     (error, stdout, stderr) => {
@@ -22,13 +22,13 @@ const gitCommit = (commitMessage) => {
 };
 
 // Define function to format files using semistandard
-const format = (file, commitMessage) => {
+const format = async (file, commitMessage) => {
   if (!file) {
     console.log("No argument passed for formatting!!");
     return;
   }
 
-  exec(`semistandard --fix ${file}`, (error, stdout, stderr) => {
+  exec(`semistandard --fix ${file}`, async (error, stdout, stderr) => {
     if (error) {
       console.error(`Error: ${error.message}`);
       return;
@@ -44,7 +44,7 @@ const format = (file, commitMessage) => {
       ${stdout}`);
 
     // After formatting, commit the changes
-    gitCommit(commitMessage);
+    await gitCommit(commitMessage);
   });
 };
 
