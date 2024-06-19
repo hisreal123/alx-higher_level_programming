@@ -1,8 +1,8 @@
 #!/usr/bin/node
-const sysArg = process.argv.slice(2);
+const [,, arg1] = process.argv;
 
-if (sysArg <= 0) {
-  console.log("No argument");
+if (!arg1) {
+  console.log('No argument');
 } else {
-  console.log(sysArg[3]);
+  console.log(arg1);
 }
