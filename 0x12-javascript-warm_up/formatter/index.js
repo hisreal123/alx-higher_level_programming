@@ -5,7 +5,7 @@ const { stderr } = require("process");
 // new commit mesage
 const gitCommit = (commitMessage) => {
   exec(
-    `git add . && git commit -m ${commitMessage} && git push`,
+    `git add . && git commit -m '${commitMessage}' && git push`,
     (error, stdout, stderr) => {
       if (error) {
         console.error(`Error pushing latest changes ${error.message}`);
