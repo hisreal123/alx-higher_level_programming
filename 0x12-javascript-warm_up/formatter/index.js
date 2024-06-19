@@ -1,6 +1,8 @@
 const { exec, spawn } = require("child_process");
 const { stderr } = require("process");
 
+
+// new commit mesage
 const gitCommit = (commitMessage) => {
   exec(
     `git add . && git commit -m ${commitMessage} && git push`,
