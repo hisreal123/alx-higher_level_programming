@@ -1,14 +1,13 @@
-const { exec, spawn } = require("child_process");
-const { stderr } = require("process");
+// Import necessary modules
+const { exec } = require("child_process");
 
-
-// new commit mesage
+// Define function to commit changes to Git
 const gitCommit = (commitMessage) => {
   exec(
     `git add . && git commit -m '${commitMessage}' && git push`,
     (error, stdout, stderr) => {
       if (error) {
-        console.error(`Error pushing latest changes ${error.message}`);
+        console.error(`Error pushing latest changes: ${error.message}`);
         return;
       }
 
@@ -18,16 +17,20 @@ const gitCommit = (commitMessage) => {
       }
 
       console.log(`
-      ================ Successfully Committed ✅  ==============================: 
-      ================ Successfully Committed ✅  ==============================: ,
+      ================ Successfully Committed ✅ ==============================
       ${stdout}`);
     }
   );
 };
-const format = (arg1, arg2) => {
-  if (!arg1) return console.log("No arguement passed for formatting !!");
 
-  exec(`semistandard --fix ${arg1} `, (error, stdout, stderr) => {
+// Define function to format files using semistandard
+const format = (file, commitMessage) => {
+  if (!file) {
+    console.log("No argument passed for formatting!!");
+    return;
+  }
+
+  exec(`semistandard --fix ${file}`, (error, stdout, stderr) => {
     if (error) {
       console.error(`Error: ${error.message}`);
       return;
@@ -38,11 +41,12 @@ const format = (arg1, arg2) => {
       return;
     }
 
-    console.log(
-      `================ Successfully fix file ✅  ==============================: ${stdout} commiting code now  ⏳`
-    );
+    console.log(`
+      ================ Successfully Fixed File ✅ ==============================
+      ${stdout}`);
 
-    gitCommit(arg2);
+    // After formatting, commit the changes
+    gitCommit(commitMessage);
   });
 };
 
