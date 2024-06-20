@@ -22,7 +22,7 @@ class Rectangle {
     }
   }
 
-  //   an insance that exchange the width and height of the rectangle
+  //   an insance that exchange the width and height of the rectangle.
   rotate () {
     [this.height, this.width] = [this.width, this.height];
     // const tempHeight = this.height;
@@ -30,7 +30,7 @@ class Rectangle {
     // this.width = tempHeight;
   }
 
-  //   an insance that multiplies the width and height of the rectangle
+  //   an insance that multiplies the width and height of the rectangle.
   double () {
     this.width *= 2;
     this.height *= 2;
