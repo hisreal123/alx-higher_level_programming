@@ -7,6 +7,7 @@ class Rectangle {
       this.width = w;
       this.height = h;
     } else {
+      return null;
     }
   }
 
@@ -17,12 +18,9 @@ class Rectangle {
 
 module.exports = Rectangle;
 
-
-
-
-  // if (Number.isInteger(w) && w > 0 && Number.isInteger(h) && h > 0) {
-  //   this.width = w;
-  //   this.height = h;
-  // } else {
-  //   return;
-  // }
+// if (Number.isInteger(w) && w > 0 && Number.isInteger(h) && h > 0) {
+//   this.width = w;
+//   this.height = h;
+// } else {
+//   return;
+// }
