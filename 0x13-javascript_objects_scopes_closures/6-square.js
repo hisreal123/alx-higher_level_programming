@@ -5,7 +5,6 @@ class Square extends Rectangle {
   size;
   constructor (size) {
     super(size, size);
-    this.size = size;
   }
 
   //    prints the rectangle using the c
