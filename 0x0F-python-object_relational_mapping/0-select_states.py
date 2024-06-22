@@ -2,15 +2,13 @@
 import MySQLdb
 import sys
 
-
-def list_states(username, password, database):
-    # Connect to the MySQL server
+if __name__ == "__main__":
     db = MySQLdb.connect(
         host="localhost",
         port=3306,
-        user=username,
-        passwd=password,
-        db=database
+        user=sys.argv[1],
+        passwd=sys.argv[2],
+        db=sys.argv[3]
     )
 
     # Create a cursor object to interact with the database
@@ -29,7 +27,3 @@ def list_states(username, password, database):
     # Close the cursor and the database connection
     cursor.close()
     db.close()
-
-
-if __name__ == "__main__":
-    list_states(sys.argv[1], sys.argv[2], sys.argv[3])
