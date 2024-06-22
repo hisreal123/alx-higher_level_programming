@@ -17,7 +17,7 @@ def list_states(username, password, database):
     cursor = db.cursor()
 
     # Execute the SQL query to retrieve all states sorted by id
-    cursor.execute("SELECT id, name FROM states ORDER BY id ASC")
+    cursor.execute("SELECT * FROM states ORDER BY id ASC")
 
     # Fetch all the results
     states = cursor.fetchall()
@@ -32,10 +32,4 @@ def list_states(username, password, database):
 
 
 if __name__ == "__main__":
-    # Get the command line arguments
-    username = sys.argv[1]
-    password = sys.argv[2]
-    database = sys.argv[3]
-
-    # List all states
-    list_states(username, password, database)
+   list_states(sys.argv[1], sys.argv[2], sys.argv[3])
