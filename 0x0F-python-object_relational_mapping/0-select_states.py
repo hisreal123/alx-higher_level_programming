@@ -1,38 +1,41 @@
-#!/usr/bin/node
+#!/usr/bin/env python3
 import MySQLdb
 import sys
 
-def list_state (username, password, database):
-    # Connect to MySQL server
 
+def list_states(username, password, database):
+    # Connect to the MySQL server
     db = MySQLdb.connect(
-        host="localhost"
+        host="localhost",
         port=3306,
-        user=username
-        pass=password,
-        db=databse,
+        user=username,
+        passwd=password,
+        db=database
     )
 
-    # Cursor to interact with the db
-    cur = db.cursor()
+    # Create a cursor object to interact with the database
+    cursor = db.cursor()
 
-    # get the states from the db using the cursor traversal
-    states = cur.execut("SELECT id, name FROM states ORDER  BY id ASC")
-    states.fetchAll()
+    # Execute the SQL query to retrieve all states sorted by id
+    cursor.execute("SELECT id, name FROM states ORDER BY id ASC")
 
-    # print the gotten states
+    # Fetch all the results
+    states = cursor.fetchall()
+
+    # Print each state
     for state in states:
         print(state)
 
-    # close the cursor and db connection
-    cur.close()
+    # Close the cursor and the database connection
+    cursor.close()
     db.close()
 
 
-
-if __name__ == '__main__':
+if __name__ == "__main__":
+    # Get the command line arguments
     username = sys.argv[1]
     password = sys.argv[2]
-    database = sys.argv[1]
+    database = sys.argv[3]
 
-    list_state(username, password, database)
+    # List all states
+    list_states(username, password, database)
