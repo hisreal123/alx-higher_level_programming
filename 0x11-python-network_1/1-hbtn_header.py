@@ -6,7 +6,8 @@ import sys
 import urllib.request
 
 if __name__ == "__main__":
-    URL = sys.argv[1]  # Get the first argument after the script name
-    req = urllib.request.Request(URL)
+    url = sys.argv[1]  # Get the first argument after the script name
+
+    req = urllib.request.Request(url)
     with urllib.request.urlopen(req) as response:
         print(dict(response.headers).get("X-Request-Id"))
