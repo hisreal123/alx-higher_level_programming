@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" A script that feteches https://alx-intranet.hbtn.io/status"""
+""" A script that feteches https://alx-intranet.hbtn.io/status """
 
 import urllib.request
 
