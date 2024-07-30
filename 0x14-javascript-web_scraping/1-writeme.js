@@ -3,7 +3,7 @@
 
 const fs = require('fs');
 
-fs.writeFile(process.argv[2], 'Python is cool', 'utf8', (err) => {
+fs.writeFile(process.argv[2], 'utf8', (err) => {
   if (err) {
     console.log(err);
   }
