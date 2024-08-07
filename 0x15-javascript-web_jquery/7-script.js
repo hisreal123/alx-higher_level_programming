@@ -1,11 +1,10 @@
 #!/usr/bin/node
 /* global $ */
-// a JavaScript script that adds a <li>
-// element to a list when the user clicks on the tag DIV#add_item
+// a JavaScript script that fetches the character name from this
+// URL: https://swapi-api.alx-tools.com/api/people/5/?format=json
 
 $(document).ready(() => {
-    $.get('https://hellosalut.stefanbohacek.dev/?lang=fr', (data) => {
-        $('#hello').text(data?.hello);
-    });
+  $.get('https://hellosalut.stefanbohacek.dev/?lang=fr', (data) => {
+    $('#hello').text(data?.hello);
+  });
 });
-
